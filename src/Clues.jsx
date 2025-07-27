@@ -154,6 +154,13 @@ export default function Clues({ tab, setTab, clues }) {
 
   return (
     <>
+      <div className={`clue-strip ${tab}`}>
+        {activeClues.slice(0,9).map((clue,i) => (
+          <div key={i} className="clue-card">
+            <ClueVisual type_id={clue.type_id} items={clue.items}/>
+          </div>
+        ))}
+      </div>
       <div className="puzzle-toolbar">
         <div className="tab-pills">
           <button
@@ -165,13 +172,6 @@ export default function Clues({ tab, setTab, clues }) {
             onClick={() => setTab('vertical')}
           >Column</button>
         </div>
-      </div>
-      <div className={`clue-strip ${tab}`}>
-        {activeClues.slice(0,9).map((clue,i) => (
-          <div key={i} className="clue-card">
-            <ClueVisual type_id={clue.type_id} items={clue.items}/>
-          </div>
-        ))}
       </div>
     </>
   );
