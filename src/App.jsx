@@ -140,7 +140,6 @@ export default function App() {
     setUndoStack(us => us.slice(0, -1));
   };
 
-  const handleSettings = () => alert('Settings menu coming soon!');
 
   // ─── cell popup ───────────────────────────────────────────────
   const openCell = (r, c, btn) => {
@@ -182,7 +181,6 @@ export default function App() {
             <Header
               puzzle={puzzle}
               timer={timer}
-              onSettings={handleSettings}
             />
             <div className="content-area">  
               <Grid

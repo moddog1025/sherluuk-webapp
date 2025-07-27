@@ -1,5 +1,4 @@
 import React from "react";
-import { FaCog } from "react-icons/fa";
 import "./Header.css";
 
 // Helper for MM:SS format
@@ -10,16 +9,9 @@ function formatTimer(ms) {
   return `${m}:${s}`;
 }
 
-export default function Header({ puzzle, timer, onSettings }) {
+export default function Header({ puzzle, timer }) {
   return (
     <div className="puzzle-toolbar">
-      <button
-        className="pill-icon"
-        aria-label="Settings"
-        onClick={onSettings}
-      >
-        <FaCog size={20} />
-      </button>
       <div className="meta-pills">
         <span className="pill-static">{puzzle.date}</span>
         <span className="pill-static">{formatTimer(timer)}</span>
