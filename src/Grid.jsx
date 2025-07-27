@@ -62,7 +62,6 @@ function GameCell({ rowIndex, colIndex, candidates, solved, onActivate }) {
   return (
     <button
       className="cell"
-      style={{ width: CELL_SIZE, height: CELL_SIZE }}
       onClick={e => { e.stopPropagation(); onActivate(e.currentTarget); }}
       onKeyDown={e => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -134,7 +133,7 @@ export default function Grid({
 }) {
   return (
     <section className="grid-wrapper" style={{ zIndex: Z_GRID }}>
-      <div className="grid-board" style={{ gridTemplateColumns: `repeat(5,${CELL_SIZE}px)` }}>
+      <div className="grid-board">
         {Array.from({ length: 5 }).flatMap((_, r) =>
           Array.from({ length: 5 }).map((_, c) => {
             const key = `${r}-${c}`;

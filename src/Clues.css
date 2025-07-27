@@ -106,3 +106,16 @@
 }
 .clue-line-vertical { flex-direction: column; align-items: center; }
 .clue-icon { width:36px; height:36px; }
+
+.clue-strip.horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+.clue-card {
+  flex: 0 1 auto;
+  padding: 4px 8px;
+  font-size: 13px;
+}

@@ -184,17 +184,19 @@ export default function App() {
               onUndo={handleUndo}
               onSettings={handleSettings}
             />
-            <Grid
-              puzzle={puzzle}
-              cellCandidates={cellCandidates}
-              openCell={openCell}
-              activeCell={activeCell}
-              anchorRect={anchorRect}
-              closeCell={closeCell}
-              toggleCandidate={toggleCandidate}
-              showWarn={showWarn}
-            />
-            <Clues tab={tab} setTab={setTab} clues={puzzle.clues} />
+            <div className="content-area">  
+              <Grid
+                puzzle={puzzle}
+                cellCandidates={cellCandidates}
+                openCell={openCell}
+                activeCell={activeCell}
+                anchorRect={anchorRect}
+                closeCell={closeCell}
+                toggleCandidate={toggleCandidate}
+                showWarn={showWarn}
+              />
+              <Clues tab={tab} setTab={setTab} clues={puzzle.clues} />
+            </div>
           </div>
           <Footer signature={puzzle.signature} />
         </main>

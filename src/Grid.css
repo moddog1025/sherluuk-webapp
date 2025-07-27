@@ -5,8 +5,10 @@
 }
 .grid-board {
   display: grid;
-  gap: 12px;
+  gap: 8px;             
+  grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
 }
+
 
 .cell {
   background: rgba(200,197,194,0.85);
@@ -55,3 +57,80 @@
 }
 .expanded-option:hover { background:#dad7d4; transform:translateY(-2px); }
 .expanded-option:focus { outline:2px solid var(--accent); outline-offset:2px; }
+
+/* ── Responsive Cell Size ───────────────────────────────────── */
+:root {
+  --cell-size: 108px; /* desktop default */
+}
+
+.grid-board {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(5, var(--cell-size));
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  aspect-ratio: 1 / 1;
+}
+
+/* ── Tablet (iPad) ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --cell-size: calc((100vw - 24px) / 5);
+  }
+  .grid-board {
+    gap: 8px;
+  }
+}
+
+/* ── Phone (iPhone) ────────────────────────────────────────── */
+@media (max-width: 480px) {
+  :root {
+    --cell-size: calc((100vw - 16px) / 5);
+  }
+  .grid-board {
+    gap: 4px;
+  }
+}
+
+:root {
+  --header-h: 64px;   /* adjust if your toolbar is taller/shorter */
+  --menu-h: 56px;     /* approximate bottom menu height */
+  --clues-h: 80px;    /* adjust to the actual clues block height */
+}
+
+/* desktop default */
+:root {
+  --cell-size: 108px;
+}
+
+.grid-board {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(5, var(--cell-size));
+}
+
+/* force square */
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+}
+
+/* for mobile / phones */
+@media (max-width: 480px) {
+  :root {
+    /* 
+      - (100vw – 16px) / 5 ensures 5 columns fit horizontally with 8px side padding 
+      - (100vh – var(--header‑h) – var(--clues‑h) – var(--menu‑h)) / 5 ensures 5 rows fit vertically 
+    */
+    --cell-size: min(
+      calc((100vw - 16px) / 5),
+      calc((100vh - var(--header-h) - var(--clues-h) - var(--menu-h)) / 5)
+    );
+  }
+  .grid-board {
+    gap: 4px;
+  }
+}

@@ -1,102 +1,121 @@
+/* Header.css */
+
+/* ── TOOLBAR CONTAINER ───────────────────────────────────────── */
 .puzzle-toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 20px;
-  margin-top: 16px;
+  margin: 16px 0 20px; /* 16px top, 20px bottom */
   padding: 0;
   background: none;
   border: none;
 }
 
-/* ============================
-   Meta Pills (Static: Date/Timer)
-   ============================ */
+/* ── ICON BUTTON GROUP ───────────────────────────────────────── */
+.toolbar-buttons {
+  display: flex;
+  gap: 8px; /* space between buttons */
+}
+
+/* ── ICON BUTTONS ────────────────────────────────────────────── */
+.pill-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 42px;
+  padding: 0;
+  background: var(--panel);
+  color: var(--text-main);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: filter 0.1s ease, transform 0.1s ease;
+
+  /* remove all native focus/click outlines */
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove inner Firefox focus border */
+.pill-icon::-moz-focus-inner {
+  border: 0;
+}
+
+.pill-icon:hover {
+  filter: brightness(0.9);
+}
+
+.pill-icon:active {
+  filter: brightness(0.8);
+  transform: scale(0.95);
+}
+
+/* Explicitly kill any focus ring if it sneaks back */
+.pill-icon:focus,
+.pill-icon:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* ── STATIC META PILLS (DATE & TIMER) ────────────────────────── */
 .meta-pills {
   display: flex;
   gap: 8px;
-  margin-right: 12px;
-  margin-top: 6px;
+  margin: 0;
+  margin-left: auto; /* pushes pills to the right */
+  align-items: center;
 }
-.pill {
+
+.pill-static {
   display: inline-block;
   background: var(--panel);
   color: var(--text-main);
   font-size: 15px;
   font-weight: 500;
   padding: 6px 16px;
-  border-radius: 10px;
   border: none;
+  border-radius: 10px;
   min-width: 60px;
   text-align: center;
-}
 
-/* Static pills never highlight or become clickable */
-.pill-static,
-.pill-static:hover,
-.pill-static:focus,
-.pill-static:active {
-  background: var(--panel);
-  color: var(--text-main);
-  cursor: default;
+  /* ensure never interactive */
+  cursor: default !important;
+  pointer-events: none;
   box-shadow: none;
   transition: none;
 }
 
-/* ============================
-   Toolbar Buttons (Undo/Settings)
-   ============================ */
-.toolbar-buttons {
-  display: flex;
-  gap: 10px;
-  margin-left: 10px;
-}
-
-/* Pill buttons: round, interactive */
-.pill-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0;
-  background: var(--panel);
-  color: var(--accent);
-  box-shadow: none;
-  border: none;
-  cursor: pointer;
-  transition: background 0.14s, color 0.14s;
-  outline: none !important;    
-}
-.pill-icon:hover, .pill-icon:active {
-  background: var(--panel-alt);
-}
-.pill-icon:focus,
-.pill-icon:hover,
-.pill-icon:active {
-  outline: none !important;
-}
-.pill-icon:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-/* ============================
-   Optional: Title Label
-   ============================ */
+/* ── OPTIONAL TITLE LABELS ───────────────────────────────────── */
 .puzzle-label {
   font-size: 16px;
   font-weight: 500;
   margin-right: 8px;
 }
+
 .puzzle-label-main {
   font-size: 26px;
   font-weight: 795;
   letter-spacing: 0.6px;
   color: #4b4b4b;
-  margin-right: 8px;
-  margin-left: 16px;
+  margin: 0 8px;
+}
+
+/* choose your desired icon hue */
+:root {
+  --icon-color: #547dac;
+}
+
+/* make the button use that color */
+.pill-icon {
+  /* …your other styles… */
+  color: var(--icon-color);
+}
+
+/* ensure the <svg> actually picks it up */
+.pill-icon svg {
+  fill: currentColor;
+  stroke: currentColor;
 }
