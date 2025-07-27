@@ -15,7 +15,12 @@ html, body, #root {
   color: var(--text-main);
 }
 
-.app-root { display:flex; flex-direction:column; min-height:100vh; }
+.app-root {
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  min-height:100dvh;
+}
 .app-shell {
   width:100%; max-width:1200px;
   margin:0 auto; padding:0 24px 48px;
@@ -118,6 +123,7 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  height: 100dvh;
   padding: 0 8px;
 }
 

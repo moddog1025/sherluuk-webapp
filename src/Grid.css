@@ -123,11 +123,11 @@
   :root {
     /* 
       - (100vw – 16px) / 5 ensures 5 columns fit horizontally with 8px side padding 
-      - (100vh – var(--header‑h) – var(--clues‑h) – var(--menu‑h)) / 5 ensures 5 rows fit vertically 
+      - (100dvh – var(--header‑h) – var(--clues‑h) – var(--menu‑h)) / 5 ensures 5 rows fit vertically
     */
     --cell-size: min(
       calc((100vw - 16px) / 5),
-      calc((100vh - var(--header-h) - var(--clues-h) - var(--menu-h)) / 5)
+      calc((100dvh - var(--header-h) - var(--clues-h) - var(--menu-h)) / 5)
     );
   }
   .grid-board {

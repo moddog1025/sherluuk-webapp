@@ -128,7 +128,7 @@ function ExpandedPanel({ row, col, candidates, onToggle, anchorRect, showWarn })
 }
 
 export default function Grid({
-  puzzle, cellCandidates, openCell, activeCell, anchorRect, closeCell,
+  cellCandidates, openCell, activeCell, anchorRect, closeCell,
   toggleCandidate, showWarn
 }) {
   return (

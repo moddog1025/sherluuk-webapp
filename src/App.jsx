@@ -186,7 +186,6 @@ export default function App() {
             />
             <div className="content-area">  
               <Grid
-                puzzle={puzzle}
                 cellCandidates={cellCandidates}
                 openCell={openCell}
                 activeCell={activeCell}
