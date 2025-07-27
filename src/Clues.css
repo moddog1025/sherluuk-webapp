@@ -15,14 +15,7 @@
   font-weight: 500;
   margin-right: 8px;
 }
-.clues-label {
-  font-size: 22px;
-  font-weight: 650;
-  color: #4b4b4b;
-  margin-right: 8px;
-  margin-left: 16px;
-  margin-top: 12px;
-}
+
 
 .tab-pills {
   display: flex;

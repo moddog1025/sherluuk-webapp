@@ -6,6 +6,7 @@ import './Clues.css';
 import './Menus.css';
 import './Footer.css';
 import puzzleData from './assets/puzzles/puzzle_schema_example.json';
+import { FaUndo } from 'react-icons/fa';
 import Header from './Header.jsx';
 import Grid from './Grid.jsx';
 import Clues from './Clues.jsx';
@@ -181,7 +182,6 @@ export default function App() {
             <Header
               puzzle={puzzle}
               timer={timer}
-              onUndo={handleUndo}
               onSettings={handleSettings}
             />
             <div className="content-area">  
@@ -194,6 +194,15 @@ export default function App() {
                 toggleCandidate={toggleCandidate}
                 showWarn={showWarn}
               />
+              <div className="undo-wrapper">
+                <button
+                  className="pill-icon"
+                  aria-label="Undo"
+                  onClick={handleUndo}
+                >
+                  <FaUndo size={20} />
+                </button>
+              </div>
               <Clues tab={tab} setTab={setTab} clues={puzzle.clues} />
             </div>
           </div>

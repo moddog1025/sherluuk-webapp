@@ -155,7 +155,6 @@ export default function Clues({ tab, setTab, clues }) {
   return (
     <>
       <div className="puzzle-toolbar">
-        <span className="puzzle-label clues-label">Clues:</span>
         <div className="tab-pills">
           <button
             className={`pill ${tab === 'horizontal' ? 'active' : ''}`}

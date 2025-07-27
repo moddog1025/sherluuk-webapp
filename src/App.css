@@ -135,3 +135,11 @@ html, body, #root {
   align-items: center;
   justify-content: center;
 }
+
+/* container for the undo button below the grid */
+.undo-wrapper {
+  width: 100%;
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
