@@ -50,11 +50,6 @@ html, body, #root {
     justify-content: flex-start;
     gap: 12px;
   }
-  .meta-pills {
-    margin-left: 0;
-    justify-content: flex-end;
-    gap: 6px;
-  }
 
   /* Clues: allow wrap */
   .clue-strip.horizontal,
@@ -122,8 +117,8 @@ html, body, #root {
 .puzzle-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
   padding: 0 8px;
 }
 
@@ -133,7 +128,7 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* remove large vertical gap */
 }
 
 /* container for the undo button below the grid */

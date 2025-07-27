@@ -12,10 +12,8 @@ function formatTimer(ms) {
 export default function Header({ puzzle, timer }) {
   return (
     <div className="puzzle-toolbar">
-      <div className="meta-pills">
-        <span className="pill-static">{puzzle.date}</span>
-        <span className="pill-static">{formatTimer(timer)}</span>
-      </div>
+      <span className="pill-static pill-date">{puzzle.date}</span>
+      <span className="pill-static pill-timer">{formatTimer(timer)}</span>
     </div>
   );
 }
