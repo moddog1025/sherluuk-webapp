@@ -1,5 +1,5 @@
 import React from "react";
-import { FaUndo, FaCog } from "react-icons/fa";
+import { FaCog } from "react-icons/fa";
 import "./Header.css";
 
 // Helper for MM:SS format
@@ -10,25 +10,16 @@ function formatTimer(ms) {
   return `${m}:${s}`;
 }
 
-export default function Header({ puzzle, timer, onUndo, onSettings }) {
+export default function Header({ puzzle, timer, onSettings }) {
   return (
     <div className="puzzle-toolbar">
-      <div className="toolbar-buttons">
-        <button
-          className="pill-icon"
-          aria-label="Undo"
-          onClick={onUndo}
-        >
-          <FaUndo size={20} />
-        </button>
-        <button
-          className="pill-icon"
-          aria-label="Settings"
-          onClick={onSettings}
-        >
-          <FaCog size={20} />
-        </button>
-      </div>
+      <button
+        className="pill-icon"
+        aria-label="Settings"
+        onClick={onSettings}
+      >
+        <FaCog size={20} />
+      </button>
       <div className="meta-pills">
         <span className="pill-static">{puzzle.date}</span>
         <span className="pill-static">{formatTimer(timer)}</span>
